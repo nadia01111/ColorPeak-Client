@@ -4,7 +4,7 @@ import { UsersContext } from "../Context/UsersContext";
 
 
 const { v4: uuidv4 } = require("uuid");
-const {GOOGLE_VISION_API_KEY} = process.env.GOOGLE_VISION_API_KEY;
+const GOOGLE_VISION_API_KEY = process.env.GOOGLE_VISION_API_KEY;
 
 //encode image from user to B64 fromat (for Google vision API)
 const getBase64 = file => {
