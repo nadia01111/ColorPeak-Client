@@ -54,7 +54,7 @@ const PaletteFromPicture = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "Authorization": `Bearer ${GOOGLE_VISION_API_KEY}`},
+             },
               body:JSON.stringify(image),
               
             })
