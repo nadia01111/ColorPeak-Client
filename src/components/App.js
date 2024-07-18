@@ -21,12 +21,12 @@ const App = () => {
       <Header />
       <NavBar/>
       <Routes>
-        <Route path="/" element={<Palettes/>}/>
+        <Route path="/" element={<CreateCollage/>}/>
         <Route path="/users/:userID" element={<UserPage/>}/>
         <Route path="/palettes" element={<Palettes/>}/>
         <Route path="/palettes/saved/:userID" element={<UserFeed/>}/>
         <Route path="/palettes/create" element={<CreateCollage/>}/>
-        <Route path="/palettes/generate" element={<HomePage/>}/>
+        {/* <Route path="/palettes/generate" element={<HomePage/>}/> */}
       </Routes>
     </BrowserRouter>
   );

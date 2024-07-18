@@ -26,15 +26,14 @@ const NavBar = () => {
 
     return (
     <Wrapper>
-        <NewPaletteBtn ref={btnRef} onClick={generateNewPalette}>
-            <h2>Presse to generate new palette</h2></NewPaletteBtn>
+        {/* <NewPaletteBtn ref={btnRef} onClick={generateNewPalette}><h2>Presse to generate new palette</h2></NewPaletteBtn> */}
 
         {isSaved? <SaveBtn onClick={savePalette}><FcLike  size={iconSize}/><span>Palette saved</span></SaveBtn>:
         <SaveBtn onClick={savePalette}><FcLikePlaceholder size={iconSize}/><span>Save palette</span></SaveBtn>
         }
         {/* <Tippy content="saved palettes"><Lnk to={`/palettes/saved/${userID}`}><FcBookmark size={iconSize}/></Lnk></Tippy> */}
         <Tippy content="create palette from picture"><Lnk to="/palettes/create"><FcAddImage size={iconSize}/></Lnk></Tippy>
-        <Tippy content="explore trending palettes"><Lnk to="/"><FcGrid size={iconSize}/></Lnk></Tippy>
+        {/* <Tippy content="explore trending palettes"><Lnk to="/"><FcGrid size={iconSize}/></Lnk></Tippy> */}
         
         
     </Wrapper>

@@ -4,7 +4,7 @@ import { UsersContext } from "../Context/UsersContext";
 
 
 const { v4: uuidv4 } = require("uuid");
-
+const {GOOGLE_VISION_API_KEY} = process.env.GOOGLE_VISION_API_KEY;
 
 //encode image from user to B64 fromat (for Google vision API)
 const getBase64 = file => {
@@ -47,17 +47,19 @@ const PaletteFromPicture = () => {
         let blob = new Blob([images[0]], { type: "image/jpg" });
         let ImageBase64;
         reader.onload = function () {
-            ImageBase64 = reader.result;
-            let image = {ImageBase64};
-              fetch("/api/color-recognize", {
-                  method: "POST",
-                  headers: {
-                 "Content-Type": "application/json",},
-                 body:JSON.stringify(image),
-                
-          })
-          .then((res) => res.json())
-          .then((data) => {
+          ImageBase64 = reader.result;
+          let image = {ImageBase64};
+      
+          fetch("http://localhost:8000/api/color-recognize", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${GOOGLE_VISION_API_KEY}`},
+              body:JSON.stringify(image),
+              
+            })
+            .then((res) => res.json())
+            .then((data) => {
               console.log(data.data);
               setPalette(data.data);
               setStatus("loaded")
