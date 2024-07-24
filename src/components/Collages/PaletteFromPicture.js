@@ -50,7 +50,7 @@ const PaletteFromPicture = () => {
           ImageBase64 = reader.result;
           let image = {ImageBase64};
       
-          fetch("http://localhost:8000/api/color-recognize", {
+          fetch("https://color-peak-4028d4f0729a.herokuapp.com/api/color-recognize", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

@@ -15,7 +15,7 @@ export const UsersContext = createContext(null);
             const addUserToMongo = async () => {
                 console.log("in use effect", isAuthenticated)
               if (isAuthenticated) {
-                  await fetch("http://localhost:8000/api/user/create-user", {
+                  await fetch("http://https://color-peak-4028d4f0729a.herokuapp.com//api/user/create-user", {
                     method: "POST", 
                     headers: {"Content-Type": "application/json",},
                     body: JSON.stringify({
